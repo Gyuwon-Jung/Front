@@ -33,18 +33,19 @@ const TeamPage = () => {
       category: modalType,
       description: additionalInfo,
     };
-
+  
     console.log("서버로 전송되는 데이터:", payload);
-
+  
     try {
-      const response = await fetch("http://3.38.97.68:8080/", {
+      // Vercel API 경로로 요청
+      const response = await fetch("/api/proxy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
       });
-
+  
       if (response.ok) {
         alert("성공적으로 전송되었습니다!");
         closeModal();
@@ -55,6 +56,7 @@ const TeamPage = () => {
       console.error("Error:", error);
     }
   };
+  
 
   return (
     <Container>
