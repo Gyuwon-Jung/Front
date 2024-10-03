@@ -37,13 +37,12 @@ const TeamPage = () => {
     console.log("서버로 전송되는 데이터:", payload);
   
     try {
-      // Vercel API 경로로 요청
-      const response = await fetch("/api/proxy", {
+      const response = await fetch("/api/proxy", { // 프록시 API로 요청 전송
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(payload), // JSON으로 변환하여 요청 본문에 담기
       });
   
       if (response.ok) {
