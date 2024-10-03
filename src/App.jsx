@@ -37,7 +37,7 @@ const TeamPage = () => {
     console.log("서버로 전송되는 데이터:", payload);
 
     try {
-      const response = await fetch("http://localhost:8080/", {
+      const response = await fetch("http://3.38.97.68:8080/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
